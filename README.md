@@ -23,15 +23,21 @@ pip3 install -r requirements.txt
 Navigate to the repository. The following line downloads all files from PubMed along with their metadata:
 
 ```
-python3 downloadPubMedFiles.py
-```
-
-If you want the files to be stored in a directory other than the one that downloadPubMedFiles.py is stored in, type
-```
 python3 downloadPubMedFiles.py [path to directory]
 ```
+If you enter no command line arguments, it will default to home directory
+
+
+If you want to search for keywords, edit the '''searchWordFile.txt''' so that it contains the search terms seperted by line breaks. Multi-word search terms are fine.
+Then type
+```
+python3 searchForKeyWords.py [path to directory]
+```
+If you enter no command line arguments, it will default to home directory
+
 ### Results
-The output of this code is many folders containing txt files of all the papers stored on pubmed along with their metadata
+Running ```downloadPubMedFiles.py``` will give you txt files of all the papers stored on pubmed along with their metadata
+Running ```searchForKeyWords.py``` will output the names of the files of the papers with the metadata containing that keyword, along with the specific keyword (in case there are multiple keywords)
 
 ## Authors
 * **Mira Welner** 
@@ -39,7 +45,7 @@ The output of this code is many folders containing txt files of all the papers s
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
 
 ## Acknowledgments
 This code was written in Professor Tagkopoulos's lab at UC Davis
