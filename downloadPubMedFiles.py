@@ -1,8 +1,9 @@
-import sys
 import os
-import requests
-import tarfile
 import shutil
+import sys
+import tarfile
+
+import requests
 
 url = "https://ftp.ncbi.nlm.nih.gov/pub/pmc/manuscript/"  # Location of the files of PubMed
 
@@ -22,9 +23,8 @@ while True:
     tar = tarfile.open(fileName, "r:gz")
     tar.extractall(directory)
     os.remove(fileName)
-    "When the zip files are unzipped, the resulting files are stored in folders. The folders do not organize them in " \
-    "a way that is relevant for how we are going to use them, so this removes the files from the folders and deletes " \
-    "the folders. "
+    "When the zip files are unzipped, the resulting files are stored in folders, this removes the files from the " \
+    "folders and deletes the folders. "
     for folder in os.listdir(directory):
         if folder.startswith('PMC') and not folder.endswith('txt'):
             for file in os.listdir(directory + "/" + folder):
