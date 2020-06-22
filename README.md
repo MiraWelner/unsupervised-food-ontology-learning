@@ -25,7 +25,7 @@ Navigate to the repository. The following line downloads all files from PubMed a
 ```
 python3 downloadPubMedFiles.py [path to directory]
 ```
-If you enter no command line arguments, it will default to home directory
+If you enter no command line arguments, it will default to current directory
 
 
 If you want to search for keywords, edit the '''searchWordFile.txt''' so that it contains the search terms seperted by line breaks. Multi-word search terms are fine.
@@ -33,10 +33,10 @@ Then type
 ```
 python3 searchForKeyWords.py [path to directory]
 ```
-If you enter no command line arguments, it will default to home directory
+If you enter no command line arguments, it will default to current directory
 
 ### Results
-Running ```downloadPubMedFiles.py``` will give you txt files of all the papers stored on pubmed along with their metadata
+Running ```downloadPubMedFiles.py``` will give you txt files of all the papers stored on PubMed in the form of .txt files as well as their metadata in the form of .json files. The metadata will be labeled after the PMID while the papers will be labeled after PMCID.\
 Running ```searchForKeyWords.py``` will output the names of the files of the papers with the metadata containing that keyword, along with the specific keyword (in case there are multiple keywords)
 
 ## Authors
