@@ -23,8 +23,7 @@ if len(sys.argv) > 1:
 searchWordFile = open(r"search_word_file.txt", "r")
 searchTerms = searchWordFile.read().splitlines()
 
-logging.info('Searching %s', DIRECTORY)
-for file in os.listdir(DIRECTORY):
+for file in os.listdir(DIRECTORY):  # search directory for keywords
     if file.endswith('json'):
         with open(DIRECTORY + "/" + file, "r") as openfile:
             metadata = openfile.read()
@@ -33,5 +32,5 @@ for file in os.listdir(DIRECTORY):
                 if searchWord in metadata is not None:
                     location = metadata.find("PMC")
                     ID = metadata[location:location + 10] + '.json'
-                    print(ID + " -> " + searchWord)
+                    logging.info(ID + " -> " + searchWord)
 searchWordFile.close()
