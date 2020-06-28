@@ -29,7 +29,7 @@ index = wget.download("https://ftp.ncbi.nlm.nih.gov/pub/pmc/manuscript/filelist.
 print()  # puts a space between progress bar and next log
 
 # get papers from PubMed
-for x in range(1, 7):
+for x in range(1, 8):
     fileName = 'PMC' + f"{x:03}" + 'XXXXXX.txt.tar.gz'  # All the zipped files are in this format
     logging.info("Downloading %s", fileName)
     wget.download("https://ftp.ncbi.nlm.nih.gov/pub/pmc/manuscript/" + fileName, fileName)
