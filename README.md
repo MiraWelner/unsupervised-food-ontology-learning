@@ -7,7 +7,7 @@ In addition to Python 3.6+, following Python library is required.
 ```
 wget==3.2
 ```
-You can optionally use pip3 to install the required Python library.
+You can also use pip3 to install the required Python library.
 ```
 pip3 install -r requirements.txt
 ```
